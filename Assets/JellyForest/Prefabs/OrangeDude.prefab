@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5078590}
   - component: {fileID: 11483956}
   - component: {fileID: 114449341148040972}
+  - component: {fileID: 2904109013154800028}
   m_Layer: 5
   m_Name: OrangeDude
   m_TagString: Player
@@ -123,7 +124,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.029259682, y: -0.13375878}
+  m_Offset: {x: -0.029259682, y: -0.102478266}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -134,7 +135,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1868534, y: 1.5264897}
+  m_Size: {x: 1.1868534, y: 1.4639287}
   m_EdgeRadius: 0
 --- !u!50 &5078590
 Rigidbody2D:
@@ -177,7 +178,7 @@ MonoBehaviour:
   JumpForce: 20
   NumberOfJumpsAllowed: 1
   CooldownBetweenJumps: 0
-  JumpsAllowedWhenGroundedOnly: 0
+  JumpsAllowedWhenGroundedOnly: 1
   JumpReleaseSpeed: 50
   JumpProportionalToPress: 1
   MinimalDelayBetweenJumps: 0.3
@@ -195,3 +196,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eac7cbe197dc794dbaed99e0565d2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2904109013154800028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beaf70d68a9f2476baeeb40257bcd2bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 10
+  bullet: {fileID: 3573200978417231013, guid: ff23e852b571746e1b8e4089f2935c00, type: 3}
+  timeBetweenShots: 0.4
