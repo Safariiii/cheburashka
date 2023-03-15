@@ -211,3 +211,4 @@ MonoBehaviour:
   bulletSpeed: 10
   bullet: {fileID: 3573200978417231013, guid: ff23e852b571746e1b8e4089f2935c00, type: 3}
   timeBetweenShots: 0.4
+  Explosion: {fileID: 168528, guid: ce1a57fd94f0a4641aa963417b32f0ce, type: 3}
