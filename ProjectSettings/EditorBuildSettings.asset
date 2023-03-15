@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/InfiniteRunnerEngine/Demos/Minimal/MultipleCharacters2D.unity
     guid: 761f54a394e1e4e4da8a7454490ab64c
   - enabled: 1
-    path: Assets/InfiniteRunnerEngine/Demos/JellyForest/JellyForest.unity
+    path: Assets/InfiniteRunnerEngine/JellyForest/JellyForest.unity
     guid: d64fe140aed8ada4daee2929348a7e6b
   - enabled: 1
     path: Assets/InfiniteRunnerEngine/Demos/BackwardsDragon/BackwardsDragon.unity
