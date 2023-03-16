@@ -8,7 +8,7 @@ public class BulletShooter : MonoBehaviour
 {
 
     [SerializeField] private float bulletSpeed = 10f;
-    [SerializeField] private Rigidbody2D bullet;
+    [SerializeField] private GameObject bullet;
     [SerializeField] private float timeBetweenShots = 1f;
     private float bulletDelay = 0.1f;
     private float timeLeft = 0f;
@@ -20,8 +20,12 @@ public class BulletShooter : MonoBehaviour
      
      void Fire()
      {
-         Rigidbody2D bulletClone = (Rigidbody2D) Instantiate(bullet, transform.position, transform.rotation);
-         bulletClone.velocity = new Vector2(bulletSpeed, 0);
+        Vector3 position = transform.position;
+        float offset = UnityEngine.Random.Range(0f, 0.2f);
+        Vector3 newPosition = new Vector3(position.x, position.y - offset, position.z);
+        GameObject bulletClone = (GameObject) Instantiate(bullet, newPosition, transform.rotation);
+        bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed, 0);
+        bulletClone.GetComponent<Renderer>().sortingOrder = 9;
      }
  
      void Update () 
