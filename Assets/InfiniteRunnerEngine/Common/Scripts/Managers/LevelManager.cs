@@ -114,7 +114,7 @@ namespace MoreMountains.InfiniteRunnerEngine
 	        if (GUIManager.Instance != null) 
 	        { 
 				// set the level name in the GUI
-				GUIManager.Instance.SetLevelName(SceneManager.GetActiveScene().name);		
+				GUIManager.Instance.SetLevelName("Chicago Vigilante");		
 				// fade in
 				GUIManager.Instance.FaderOn(false,IntroFadeDuration);
 			}
