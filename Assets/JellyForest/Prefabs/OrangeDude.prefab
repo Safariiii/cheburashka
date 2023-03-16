@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 11483956}
   - component: {fileID: 114449341148040972}
   - component: {fileID: 2904109013154800028}
-  - component: {fileID: -8424622756936821254}
+  - component: {fileID: 5034004600767547727}
   m_Layer: 8
   m_Name: OrangeDude
   m_TagString: Player
@@ -212,7 +212,7 @@ MonoBehaviour:
   bulletSpeed: 10
   bullet: {fileID: 6481476414379590393, guid: ff23e852b571746e1b8e4089f2935c00, type: 3}
   timeBetweenShots: 0.4
---- !u!82 &-8424622756936821254
+--- !u!82 &5034004600767547727
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

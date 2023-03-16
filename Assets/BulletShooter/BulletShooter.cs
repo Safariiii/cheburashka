@@ -22,14 +22,21 @@ public class BulletShooter : MonoBehaviour
      
      void Fire()
      {
-        fireSound.Play();
+        // 
         Vector3 position = transform.position;
         float offset = UnityEngine.Random.Range(0f, 0.2f);
         Vector3 newPosition = new Vector3(position.x, position.y - offset, position.z);
         GameObject bulletClone = (GameObject) Instantiate(bullet, newPosition, transform.rotation);
         bulletClone.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed, 0);
         bulletClone.GetComponent<Renderer>().sortingOrder = 9;
+        StartCoroutine(PlaySound());
      }
+
+     private IEnumerator PlaySound()
+    {
+        yield return new WaitForSeconds(0);
+        fireSound.Play();
+    }
  
      void Update () 
      {
