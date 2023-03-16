@@ -18,8 +18,14 @@ public class Bullet : MonoBehaviour
                 animator.SetTrigger("death");
                 enemy.isTrigger = true;
                 other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(15, 0);
-            }
+                //StartCoroutine(FireBullets(other.gameObject));
+             }
         }
+    }
+    private IEnumerator FireBullets(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(0.1f);
+        gameObject.GetComponent<MMPoolableObject>().Destroy();
     }
 }
 

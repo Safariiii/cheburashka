@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 11409244}
   - component: {fileID: 114080024709441186}
   - component: {fileID: -3897296541006227407}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Watershark
   m_TagString: Enemy
   m_Icon: {fileID: 0}
