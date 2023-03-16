@@ -202,30 +202,45 @@ namespace MoreMountains.InfiniteRunnerEngine
 
 		private void SpawnEnemy(GameObject spawnedObject, Transform transform) 
 		{
-			/*GameObject respawn = GameObject.FindWithTag("Enemy");
-			if (respawn == null)
-			{
-				GameObject clone = (GameObject)Instantiate(enemy, transform.position, transform.rotation);
-			}
-			else
-			{
-				respawn.transform.position = transform.position;
-				respawn.transform.rotation = transform.rotation;
-				respawn.SetActive(true);
-			}*/
-			GameObject enemyLocal = _enemyPooler.GetPooledGameObject();
+			GameObject clone = (GameObject)Instantiate(enemy, new Vector3(transform.position.x, transform.transform.position.y + 10, transform.position.z), transform.rotation);
+			//var enemys = GameObject.FindGameObjectsWithTag("Enemy");
+			//if (enemys.Length < 3)
+			//{
+			//	GameObject clone = (GameObject)Instantiate(enemy, new Vector3(transform.position.x, transform.transform.position.y + 10, transform.position.z), transform.rotation);
+			//	//clone.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+			//}
+			//else
+			//{
+			//	//foreach(var respawn in enemys)
+			//		//respawn.GetComponent<MMPoolableObject>().Destroy();
+			//	//GameObject clone = (GameObject)Instantiate(enemy, new Vector3(transform.position.x, transform.transform.position.y + 10, transform.position.z), transform.rotation);
+			//	//respawn.transform.position = new Vector3(transform.position.x, transform.transform.position.y + 10, transform.position.z); ;
+			//	//respawn.transform.rotation = transform.rotation;
+			//	//respawn.GetComponent<Rigidbody2D>().velocity = new Vector2();
+			//	//respawn.GetComponent<BoxCollider2D>().isTrigger = false;
+			//	//respawn.SetActive(true);
+			//}
+			//GameObject enemyLocal = _enemyPooler.GetPooledGameObject();
 
 
-
-			enemyLocal.transform.position = new Vector3(transform.position.x, transform.transform.position.y + 10, transform.position.z);
-			enemyLocal.transform.rotation = new Quaternion();
+			//enemyLocal.GetComponent<Rigidbody2D>().velocity = new Vector2();
+			//enemyLocal.GetComponent<BoxCollider2D>().isTrigger = false;
+			//enemyLocal.transform.position = new Vector3(transform.position.x, transform.transform.position.y + 10, transform.position.z);
+			//enemyLocal.transform.rotation = new Quaternion();
+			////enemyLocal.gameObject.SetActive(true);
 			//enemyLocal.SetActive(true);
-			enemyLocal.SetActive(true);
-			if (enemyLocal.GetComponent<MovingObject>() != null)
-			{
-				enemyLocal.GetComponent<MovingObject>().Move();
-			}
-			enemyLocal.GetComponent<MMPoolableObject>().TriggerOnSpawnComplete();
+			//if (enemyLocal.GetComponent<MovingObject>() != null)
+			//{
+			//	enemyLocal.GetComponent<MovingObject>().Move();
+			//}
+			//enemyLocal.GetComponent<MMPoolableObject>().TriggerOnSpawnComplete();
+			//foreach (Transform child in enemyLocal.transform)
+			//{
+			//	if (child.gameObject.GetComponent<ReactivateOnSpawn>() != null)
+			//	{
+			//		child.gameObject.GetComponent<ReactivateOnSpawn>().Reactivate();
+			//	}
+			//}
 			//enemy.SetActive(true);
 			//GameObject respawn = GameObject.FindWithTag("Enemy");
 			//Watershark clone = Instantiate(enemy, new Vector3(), transform.rotation);
