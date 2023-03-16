@@ -20,6 +20,7 @@ namespace MoreMountains.InfiniteRunnerEngine
 		/// The distance traveled since the start of the level
 		public float DistanceTraveled { get; protected set; }
 
+		public Animator playerAnimator;
 		/// the prefab you want for your player
 		[Header("Prefabs")]
 		public GameObject StartingPosition;
@@ -462,11 +463,12 @@ namespace MoreMountains.InfiniteRunnerEngine
 		protected virtual void AllCharactersAreDead()
 		{
 	        // if we've specified an effect for when a life is lost, we instantiate it at the camera's position
-	        if (LifeLostExplosion != null)
-	        {
-	            GameObject explosion = Instantiate(LifeLostExplosion);
-	            explosion.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y,0) ;
-	        }
+			
+	        // if (LifeLostExplosion != null)
+	        // {
+	        //     GameObject explosion = Instantiate(LifeLostExplosion);
+	        //     explosion.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y,0) ;
+	        // }
 
 	        // we've just lost a life
 	        GameManager.Instance.SetStatus(GameManager.GameStatus.LifeLost);

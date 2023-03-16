@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chebur_Hero_x4_20
+      name: Chebur_Death
       rect:
         serializedVersion: 2
         x: 0
@@ -568,10 +568,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Chebur_Death: -1451985687
       Chebur_Hero_x4_0: 1088364830
       Chebur_Hero_x4_1: -856176211
       Chebur_Hero_x4_2: -834705799
-      Chebur_Hero_x4_20: -1451985687
       Chebur_Hero_x4_3: -1656718245
       Chebur_Hero_x4_4: -44828720
       Chebur_Hero_x4_5: -1267742706
