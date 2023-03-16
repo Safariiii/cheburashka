@@ -202,40 +202,24 @@ namespace MoreMountains.InfiniteRunnerEngine
 
 		private void SpawnEnemy(GameObject spawnedObject, Transform transform) 
 		{
+			var collider = spawnedObject.GetComponent<BoxCollider2D>();
+
+			var shift = UnityEngine.Random.Range(0, collider.size.x);
 
 			GameObject enemyLocal = _enemyPooler.GetPooledGameObject();
 
-
 			enemyLocal.GetComponent<Rigidbody2D>().velocity = new Vector2();
 			enemyLocal.GetComponent<BoxCollider2D>().isTrigger = false;
-			enemyLocal.transform.position = new Vector3(transform.position.x, transform.transform.position.y + 10, transform.position.z);
+
+			enemyLocal.transform.position = new Vector3(transform.position.x + shift, transform.transform.position.y + 10, transform.position.z);
 			enemyLocal.transform.rotation = new Quaternion();
 			enemyLocal.gameObject.SetActive(true);
-			//enemyLocal.SetActive(true);
+
 			if (enemyLocal.GetComponent<MovingObject>() != null)
 			{
 				enemyLocal.GetComponent<MovingObject>().Move();
 			}
 			enemyLocal.GetComponent<MMPoolableObject>().TriggerOnSpawnComplete();
-			//foreach (Transform child in enemyLocal.transform)
-			//{
-			//	if (child.gameObject.GetComponent<ReactivateOnSpawn>() != null)
-			//	{
-			//		child.gameObject.GetComponent<ReactivateOnSpawn>().Reactivate();
-			//	}
-			//}
-			//enemy.SetActive(true);
-			//GameObject respawn = GameObject.FindWithTag("Enemy");
-			//Watershark clone = Instantiate(enemy, new Vector3(), transform.rotation);
-			//respawn.transform.position = new Vector3();
-			//respawn.transform.rotation = new Quaternion();
-			//respawn.SetActive(true);
-
-			//if (enemy.GetComponent<MovingObject>() != null)
-			//{
-			//	enemy.GetComponent<MovingObject>().Move();
-			//}
-			//enemy.GetComponent<MMPoolableObject>().TriggerOnSpawnComplete();
 		}
 
 		/// <summary>
