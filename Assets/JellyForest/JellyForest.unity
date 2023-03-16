@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 309149939}
   - component: {fileID: 309149938}
   - component: {fileID: 309149940}
+  - component: {fileID: 309149941}
   m_Layer: 0
   m_Name: ForestPlatformSpawner
   m_TagString: Untagged
@@ -283,6 +284,24 @@ MonoBehaviour:
   NestUnderThis: 0
   GameObjectToPool: {fileID: 183730, guid: 7dd1901040f9dbd40b97b3b92ceabbd5, type: 3}
   PoolSize: 20
+  PoolCanExpand: 1
+--- !u!114 &309149941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309149937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  GameObjectToPool: {fileID: 168528, guid: fff89180d5793bc46828bbb029c87e9b, type: 3}
+  PoolSize: 2
   PoolCanExpand: 1
 --- !u!1 &494759653
 GameObject:

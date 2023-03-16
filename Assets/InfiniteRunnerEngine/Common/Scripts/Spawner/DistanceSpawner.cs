@@ -202,24 +202,30 @@ namespace MoreMountains.InfiniteRunnerEngine
 
 		private void SpawnEnemy(GameObject spawnedObject, Transform transform) 
 		{
-			GameObject respawn = GameObject.FindWithTag("Enemy");
+			/*GameObject respawn = GameObject.FindWithTag("Enemy");
 			if (respawn == null)
 			{
-				GameObject clone = (GameObject)Instantiate(enemy, new Vector3(), transform.rotation);
+				GameObject clone = (GameObject)Instantiate(enemy, transform.position, transform.rotation);
 			}
 			else
 			{
-				respawn.transform.position = new Vector3();
-				respawn.transform.rotation = new Quaternion();
+				respawn.transform.position = transform.position;
+				respawn.transform.rotation = transform.rotation;
 				respawn.SetActive(true);
+			}*/
+			GameObject enemyLocal = _enemyPooler.GetPooledGameObject();
+
+
+
+			enemyLocal.transform.position = new Vector3(transform.position.x, transform.transform.position.y + 10, transform.position.z);
+			enemyLocal.transform.rotation = new Quaternion();
+			//enemyLocal.SetActive(true);
+			enemyLocal.SetActive(true);
+			if (enemyLocal.GetComponent<MovingObject>() != null)
+			{
+				enemyLocal.GetComponent<MovingObject>().Move();
 			}
-			//var enemy = _enemyPooler.GetPooledGameObject();
-			//enemy.transform.parent = transform;
-
-
-			//enemy.transform.position = transform.position;
-			//enemy.transform.localScale = transform.localScale;
-			//enemy.transform.rotation = transform.rotation;
+			enemyLocal.GetComponent<MMPoolableObject>().TriggerOnSpawnComplete();
 			//enemy.SetActive(true);
 			//GameObject respawn = GameObject.FindWithTag("Enemy");
 			//Watershark clone = Instantiate(enemy, new Vector3(), transform.rotation);
