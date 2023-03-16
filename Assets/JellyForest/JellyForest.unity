@@ -188,6 +188,7 @@ MonoBehaviour:
   MinimumZClamp: 0
   MaximumZClamp: 0
   SpawnRotatedToDirection: 1
+  enemy: {fileID: 0}
 --- !u!4 &102723790
 Transform:
   m_ObjectHideFlags: 0
@@ -249,6 +250,7 @@ MonoBehaviour:
   MinimumZClamp: 0
   MaximumZClamp: 0
   SpawnRotatedToDirection: 1
+  enemy: {fileID: 168528, guid: fff89180d5793bc46828bbb029c87e9b, type: 3}
 --- !u!4 &309149939
 Transform:
   m_ObjectHideFlags: 0
