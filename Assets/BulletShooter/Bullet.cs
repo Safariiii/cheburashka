@@ -17,7 +17,9 @@ public class Bullet : MonoBehaviour
                 Animator animator = other.gameObject.GetComponent<Animator>();
                 animator.SetTrigger("death");
                 enemy.isTrigger = true;
-                other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(15, 0);
+
+                Rigidbody2D rb = other.gameObject.GetComponent<Rigidbody2D>();
+                rb.velocity = new Vector2(15, 0);
                 //StartCoroutine(FireBullets(other.gameObject));
              }
         }
