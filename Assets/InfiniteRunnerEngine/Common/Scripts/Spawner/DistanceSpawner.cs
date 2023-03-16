@@ -39,15 +39,19 @@ namespace MoreMountains.InfiniteRunnerEngine
 	    protected Transform _lastSpawnedTransform;
 		protected float _nextSpawnDistance;
 		protected Vector3 _gap = Vector3.zero;
+		private MMObjectPooler _enemyPooler;
+		[SerializeField] private GameObject enemy;
 
 
-	    /// <summary>
-	    /// Triggered at the start of the level, initialization
-	    /// </summary>
-	    protected virtual void Start () 
+		/// <summary>
+		/// Triggered at the start of the level, initialization
+		/// </summary>
+		protected virtual void Start () 
 		{
 			/// we get the object pooler component
-			_objectPooler = GetComponent<MMObjectPooler> ();	
+			var components = GetComponents<MMObjectPooler>();
+			_objectPooler = components[0];
+			_enemyPooler = components[1];
 		}
 
 	    /// <summary>
@@ -193,7 +197,41 @@ namespace MoreMountains.InfiniteRunnerEngine
 			_nextSpawnDistance = spawnedObject.GetComponent<MMPoolableObject>().Size.x/2 ;
 			// we store our new object, which will now be the previously spawned object for our next spawn
 			_lastSpawnedTransform = spawnedObject.transform;
-			
+			SpawnEnemy(spawnedObject, _lastSpawnedTransform);
+		}
+
+		private void SpawnEnemy(GameObject spawnedObject, Transform transform) 
+		{
+			GameObject respawn = GameObject.FindWithTag("Enemy");
+			if (respawn == null)
+			{
+				GameObject clone = (GameObject)Instantiate(enemy, new Vector3(), transform.rotation);
+			}
+			else
+			{
+				respawn.transform.position = new Vector3();
+				respawn.transform.rotation = new Quaternion();
+				respawn.SetActive(true);
+			}
+			//var enemy = _enemyPooler.GetPooledGameObject();
+			//enemy.transform.parent = transform;
+
+
+			//enemy.transform.position = transform.position;
+			//enemy.transform.localScale = transform.localScale;
+			//enemy.transform.rotation = transform.rotation;
+			//enemy.SetActive(true);
+			//GameObject respawn = GameObject.FindWithTag("Enemy");
+			//Watershark clone = Instantiate(enemy, new Vector3(), transform.rotation);
+			//respawn.transform.position = new Vector3();
+			//respawn.transform.rotation = new Quaternion();
+			//respawn.SetActive(true);
+
+			//if (enemy.GetComponent<MovingObject>() != null)
+			//{
+			//	enemy.GetComponent<MovingObject>().Move();
+			//}
+			//enemy.GetComponent<MMPoolableObject>().TriggerOnSpawnComplete();
 		}
 
 		/// <summary>
