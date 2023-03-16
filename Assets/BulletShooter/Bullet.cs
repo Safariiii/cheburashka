@@ -7,7 +7,6 @@ namespace MoreMountains.InfiniteRunnerEngine {
 public class Bullet : MonoBehaviour
 {
 
-    public Animator EnemyAnimator;
     
     void OnTriggerEnter2D(Collider2D other)
     {
