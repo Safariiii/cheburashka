@@ -177,12 +177,12 @@ MonoBehaviour:
   GroundDistanceTolerance: 0.05
   InitialInvincibilityDuration: 3
   JumpForce: 20
-  NumberOfJumpsAllowed: 2
-  CooldownBetweenJumps: 0
+  NumberOfJumpsAllowed: 1
+  CooldownBetweenJumps: 0.5
   JumpsAllowedWhenGroundedOnly: 1
   JumpReleaseSpeed: 50
   JumpProportionalToPress: 1
-  MinimalDelayBetweenJumps: 0.3
+  MinimalDelayBetweenJumps: 0.9
   UngroundedDurationAfterJump: 0.2
   _numberOfJumpsLeft: 1
 --- !u!114 &114449341148040972
