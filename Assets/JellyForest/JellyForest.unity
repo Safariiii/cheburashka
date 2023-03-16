@@ -242,8 +242,8 @@ MonoBehaviour:
   OnlySpawnWhileGameInProgress: 0
   InitialDelay: 0
   GapOrigin: 0
-  MinimumGap: {x: 3, y: 0, z: 0}
-  MaximumGap: {x: 6, y: 3, z: 0}
+  MinimumGap: {x: 1, y: -1, z: 0}
+  MaximumGap: {x: 3, y: 1, z: 0}
   MinimumYClamp: -3.91
   MaximumYClamp: 2.29
   MinimumZClamp: 0
@@ -1020,8 +1020,8 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 15.6, y: 7.33, z: 0}
   InitialSpeed: 3
-  MaximumSpeed: 40
-  SpeedAcceleration: 0.5
+  MaximumSpeed: 7
+  SpeedAcceleration: 0.1
   IntroFadeDuration: 1
   OutroFadeDuration: 1
   StartCountdown: 0
