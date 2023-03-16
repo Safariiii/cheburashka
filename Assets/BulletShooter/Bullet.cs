@@ -7,27 +7,21 @@ namespace MoreMountains.InfiniteRunnerEngine {
 public class Bullet : MonoBehaviour
 {
 
-    public GameObject Explosion;
+    public Animator EnemyAnimator;
     
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            
-            GameObject explosion = (GameObject)Instantiate(Explosion);
-	        explosion.transform.position = new Vector3(transform.GetComponent<Renderer>().bounds.min.x, transform.GetComponent<Renderer>().bounds.center.y,0);
-	        MMAnimatorExtensions.UpdateAnimatorBoolIfExists(explosion.GetComponent<Animator>(), "Explode", true);
-			// we turn the object inactive so it can be instantiated again 
-	        other.gameObject.SetActive(false);
-            // StartCoroutine(SetActiveAgain(other));
+            BoxCollider2D enemy = other.gameObject.GetComponent<BoxCollider2D>();
+            if (enemy.isTrigger == false) {
+                Animator animator = other.gameObject.GetComponent<Animator>();
+                animator.SetTrigger("death");
+                enemy.isTrigger = true;
+                other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(15, 0);
+            }
         }
     }
-
-    // private IEnumerator SetActiveAgain(Collider2D other)
-    // {
-    //     yield return new WaitForSeconds(2);
-    //     other.gameObject.SetActive(true);
-    // }
 }
 
 }
