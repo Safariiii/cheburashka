@@ -13,13 +13,16 @@ public class BulletShooter : MonoBehaviour
     private float bulletDelay = 0.1f;
     private float timeLeft = 0f;
     private bool canShoot = true;
+    private AudioSource fireSound;
 
     void Start() {
         timeLeft = timeBetweenShots;
+        fireSound = GetComponent<AudioSource>();
     }
      
      void Fire()
      {
+        fireSound.Play();
         Vector3 position = transform.position;
         float offset = UnityEngine.Random.Range(0f, 0.2f);
         Vector3 newPosition = new Vector3(position.x, position.y - offset, position.z);

@@ -43,7 +43,7 @@ namespace MoreMountains.InfiniteRunnerEngine
 		[Header("Level Bounds")]
 		/// the line after which objects can be recycled
 		public Bounds RecycleBounds;
-
+		private AudioSource fireSound;
 	    [Space(10)]
 		/// the line after which playable characters will die - leave it to zero if you don't want to use it
 		public Bounds DeathBounds;
@@ -100,7 +100,7 @@ namespace MoreMountains.InfiniteRunnerEngine
 		{
 	        Speed = InitialSpeed;
 	        DistanceTraveled = 0;
-
+			fireSound = GetComponent<AudioSource>();
 	        InstantiateCharacters();
 
 	        ManageControlScheme();
@@ -433,8 +433,11 @@ namespace MoreMountains.InfiniteRunnerEngine
 		/// <summary>
 		/// Kills the player.
 		/// </summary>
-		public virtual void KillCharacter(PlayableCharacter player)
+		public virtual void KillCharacter(PlayableCharacter player, bool shouldPlaySound)
 		{
+			if (shouldPlaySound) {
+				fireSound.Play();
+			}
 			StartCoroutine(KillCharacterCo(player));
 		}
 		

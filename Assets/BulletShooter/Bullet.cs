@@ -7,13 +7,19 @@ namespace MoreMountains.InfiniteRunnerEngine {
 public class Bullet : MonoBehaviour
 {
 
-    
+    private AudioSource fireSound;
+
+    void Start() {
+        fireSound = GetComponent<AudioSource>();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
             BoxCollider2D enemy = other.gameObject.GetComponent<BoxCollider2D>();
             if (enemy.isTrigger == false) {
+                fireSound.Play();
                 Animator animator = other.gameObject.GetComponent<Animator>();
                 animator.SetTrigger("death");
                 enemy.isTrigger = true;

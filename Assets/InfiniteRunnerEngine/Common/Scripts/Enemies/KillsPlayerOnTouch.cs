@@ -9,7 +9,12 @@ namespace MoreMountains.InfiniteRunnerEngine
 	/// </summary>
 	public class KillsPlayerOnTouch : MonoBehaviour 
 	{
+		private AudioSource fireSound;
 		private PlayableCharacter playerToKill;
+		void Start() {
+			fireSound = GetComponent<AudioSource>();
+		}
+
 		/// <summary>
 		/// Handles the collision if we're in 2D mode
 		/// </summary>
@@ -50,11 +55,11 @@ namespace MoreMountains.InfiniteRunnerEngine
 			{
 				return;
 			}
-			Debug.Log("sdfsdfsdf");
 			player.GetComponent<Animator>().SetTrigger("death");
 			player.GetComponent<BoxCollider2D>().isTrigger = true;
 			player.GetComponent<Rigidbody2D>().velocity = new Vector2(15, 0);
 			playerToKill = player;
+			fireSound.Play();
 			StartCoroutine(Kill());
 
 			// we ask the LevelManager to kill the character
@@ -62,7 +67,7 @@ namespace MoreMountains.InfiniteRunnerEngine
 		private IEnumerator Kill()
 		{
 			yield return new WaitForSeconds(0.6f);
-			LevelManager.Instance.KillCharacter(playerToKill);
+			LevelManager.Instance.KillCharacter(playerToKill, false);
 		}
 	}
 

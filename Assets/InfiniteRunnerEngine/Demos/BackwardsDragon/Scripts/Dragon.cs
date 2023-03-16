@@ -88,7 +88,7 @@ namespace MoreMountains.InfiniteRunnerEngine
 	            explosion.transform.position = transform.GetComponent<Renderer>().bounds.center+1*Vector3.down;
                 MMAnimatorExtensions.UpdateAnimatorBoolIfExists(explosion.GetComponent<Animator>(), "Grounded", _grounded);
 
-	            LevelManager.Instance.KillCharacter(this);
+	            LevelManager.Instance.KillCharacter(this, true);
 	        }
 
 	        // if we're supposed to reset the player's position, we lerp its position to its initial position

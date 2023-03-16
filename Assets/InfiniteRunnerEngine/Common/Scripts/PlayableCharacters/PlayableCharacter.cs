@@ -196,7 +196,7 @@ namespace MoreMountains.InfiniteRunnerEngine
 		{
 			if (LevelManager.Instance.CheckDeathCondition(GetPlayableCharacterBounds()))
 			{
-				LevelManager.Instance.KillCharacter(this);
+				LevelManager.Instance.KillCharacter(this, true);
 			}
 		}
 
