@@ -175,4 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09fed736792ad4d149fdf11174f25a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyAnimator: {fileID: 9586716, guid: fff89180d5793bc46828bbb029c87e9b, type: 3}
+  maxRange: 7
